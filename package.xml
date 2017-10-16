@@ -10,7 +10,7 @@
   <email>slusarz@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2016-03-08</date>
+ <date>2017-10-17</date>
  <version>
   <release>1.0.4</release>
   <api>1.0.0</api>
@@ -25,15 +25,6 @@
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <dir name="doc">
-    <dir name="Horde">
-     <dir name="Mail">
-      <dir name="Autoconfig">
-       <file name="COPYING" role="doc" />
-      </dir> <!-- /doc/Horde/Mail/Autoconfig -->
-     </dir> <!-- /doc/Horde/Mail -->
-    </dir> <!-- /doc/Horde -->
-   </dir> <!-- /doc -->
    <dir name="lib">
     <dir name="Horde">
      <dir name="Mail">
@@ -75,6 +66,7 @@
      </dir> <!-- /test/Horde/Mail -->
     </dir> <!-- /test/Horde -->
    </dir> <!-- /test -->
+   <file name="LICENSE" role="doc" />
   </dir> <!-- / -->
  </contents>
  <dependencies>
@@ -135,26 +127,26 @@
  </dependencies>
  <phprelease>
   <filelist>
-   <install as="COPYING" name="doc/Horde/Mail/Autoconfig/COPYING" />
    <install as="Horde/Mail/Autoconfig.php" name="lib/Horde/Mail/Autoconfig.php" />
    <install as="Horde/Mail/Autoconfig/Driver.php" name="lib/Horde/Mail/Autoconfig/Driver.php" />
-   <install as="Horde/Mail/Autoconfig/Exception.php" name="lib/Horde/Mail/Autoconfig/Exception.php" />
-   <install as="Horde/Mail/Autoconfig/Server.php" name="lib/Horde/Mail/Autoconfig/Server.php" />
    <install as="Horde/Mail/Autoconfig/Driver/Guess.php" name="lib/Horde/Mail/Autoconfig/Driver/Guess.php" />
    <install as="Horde/Mail/Autoconfig/Driver/Srv.php" name="lib/Horde/Mail/Autoconfig/Driver/Srv.php" />
    <install as="Horde/Mail/Autoconfig/Driver/Thunderbird.php" name="lib/Horde/Mail/Autoconfig/Driver/Thunderbird.php" />
+   <install as="Horde/Mail/Autoconfig/Exception.php" name="lib/Horde/Mail/Autoconfig/Exception.php" />
+   <install as="Horde/Mail/Autoconfig/Server.php" name="lib/Horde/Mail/Autoconfig/Server.php" />
    <install as="Horde/Mail/Autoconfig/Server/Imap.php" name="lib/Horde/Mail/Autoconfig/Server/Imap.php" />
    <install as="Horde/Mail/Autoconfig/Server/Msa.php" name="lib/Horde/Mail/Autoconfig/Server/Msa.php" />
    <install as="Horde/Mail/Autoconfig/Server/Pop3.php" name="lib/Horde/Mail/Autoconfig/Server/Pop3.php" />
+   <install as="LICENSE" name="LICENSE" />
    <install as="Horde/Mail/Autoconfig/AllTests.php" name="test/Horde/Mail/Autoconfig/AllTests.php" />
    <install as="Horde/Mail/Autoconfig/AutoconfigTest.php" name="test/Horde/Mail/Autoconfig/AutoconfigTest.php" />
    <install as="Horde/Mail/Autoconfig/bootstrap.php" name="test/Horde/Mail/Autoconfig/bootstrap.php" />
    <install as="Horde/Mail/Autoconfig/conf.php.dist" name="test/Horde/Mail/Autoconfig/conf.php.dist" />
-   <install as="Horde/Mail/Autoconfig/phpunit.xml" name="test/Horde/Mail/Autoconfig/phpunit.xml" />
    <install as="Horde/Mail/Autoconfig/Driver/GuessTest.php" name="test/Horde/Mail/Autoconfig/Driver/GuessTest.php" />
    <install as="Horde/Mail/Autoconfig/Driver/SrvTest.php" name="test/Horde/Mail/Autoconfig/Driver/SrvTest.php" />
    <install as="Horde/Mail/Autoconfig/Driver/TestBase.php" name="test/Horde/Mail/Autoconfig/Driver/TestBase.php" />
    <install as="Horde/Mail/Autoconfig/Driver/ThunderbirdTest.php" name="test/Horde/Mail/Autoconfig/Driver/ThunderbirdTest.php" />
+   <install as="Horde/Mail/Autoconfig/phpunit.xml" name="test/Horde/Mail/Autoconfig/phpunit.xml" />
   </filelist>
  </phprelease>
  <changelog>
@@ -245,7 +237,7 @@
    <stability>
     <release>stable</release>
     <api>stable</api></stability>
-   <date>2016-03-08</date>
+   <date>2017-10-17</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * 
