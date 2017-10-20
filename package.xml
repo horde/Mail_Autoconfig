@@ -10,7 +10,7 @@
   <email>slusarz@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2017-10-17</date>
+ <date>2017-10-20</date>
  <version>
   <release>1.0.4</release>
   <api>1.0.0</api>
@@ -61,7 +61,6 @@
        <file name="AutoconfigTest.php" role="test" />
        <file name="bootstrap.php" role="test" />
        <file name="conf.php.dist" role="test" />
-       <file name="phpunit.xml" role="test" />
       </dir> <!-- /test/Horde/Mail/Autoconfig -->
      </dir> <!-- /test/Horde/Mail -->
     </dir> <!-- /test/Horde -->
@@ -146,7 +145,6 @@
    <install as="Horde/Mail/Autoconfig/Driver/SrvTest.php" name="test/Horde/Mail/Autoconfig/Driver/SrvTest.php" />
    <install as="Horde/Mail/Autoconfig/Driver/TestBase.php" name="test/Horde/Mail/Autoconfig/Driver/TestBase.php" />
    <install as="Horde/Mail/Autoconfig/Driver/ThunderbirdTest.php" name="test/Horde/Mail/Autoconfig/Driver/ThunderbirdTest.php" />
-   <install as="Horde/Mail/Autoconfig/phpunit.xml" name="test/Horde/Mail/Autoconfig/phpunit.xml" />
   </filelist>
  </phprelease>
  <changelog>
@@ -237,7 +235,7 @@
    <stability>
     <release>stable</release>
     <api>stable</api></stability>
-   <date>2017-10-17</date>
+   <date>2017-10-20</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * 
