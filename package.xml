@@ -10,7 +10,7 @@
   <email>slusarz@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2017-10-20</date>
+ <date>2017-10-27</date>
  <version>
   <release>1.0.4</release>
   <api>1.0.0</api>
@@ -24,6 +24,15 @@
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
+   <dir name="doc">
+    <dir name="Horde">
+     <dir name="Mail">
+      <dir name="Autoconfig">
+       <file name="CHANGES" role="doc" />
+      </dir> <!-- /doc/Horde/Mail/Autoconfig -->
+     </dir> <!-- /doc/Horde/Mail -->
+    </dir> <!-- /doc/Horde -->
+   </dir> <!-- /doc -->
    <dir name="lib">
     <dir name="Horde">
      <dir name="Mail">
@@ -125,6 +134,7 @@
  </dependencies>
  <phprelease>
   <filelist>
+   <install as="CHANGES" name="doc/Horde/Mail/Autoconfig/CHANGES" />
    <install as="Horde/Mail/Autoconfig.php" name="lib/Horde/Mail/Autoconfig.php" />
    <install as="Horde/Mail/Autoconfig/Driver.php" name="lib/Horde/Mail/Autoconfig/Driver.php" />
    <install as="Horde/Mail/Autoconfig/Driver/Guess.php" name="lib/Horde/Mail/Autoconfig/Driver/Guess.php" />
@@ -234,7 +244,7 @@
    <stability>
     <release>stable</release>
     <api>stable</api></stability>
-   <date>2017-10-20</date>
+   <date>2017-10-27</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
    </notes>

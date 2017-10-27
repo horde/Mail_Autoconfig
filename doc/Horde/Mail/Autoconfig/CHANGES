@@ -1,0 +1,45 @@
+----------
+v1.0.4-git
+----------
+
+
+------
+v1.0.3
+------
+
+[jan] Mark PHP 7 as supported.
+
+
+------
+v1.0.2
+------
+
+[jan] Improve PSR-2 compatibility.
+
+
+------
+v1.0.1
+------
+
+[mms] Support IDN hostnames in e-mail address queries.
+
+
+------
+v1.0.0
+------
+
+First stable release.
+
+
+-----------
+v1.0.0beta2
+-----------
+
+[mms] Fix verification of IMAP and POP3 servers (Bug #13205).
+
+
+-----------
+v1.0.0beta1
+-----------
+
+[mms] Initial release.
