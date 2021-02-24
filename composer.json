@@ -34,9 +34,6 @@
     "autoload": {
         "psr-0": {
             "Horde_Mail_Autoconfig": "lib/"
-        },
-        "psr-4": {
-            "Horde\\Mail\\Autoconfig\\": "src/"
         }
     }
 }
