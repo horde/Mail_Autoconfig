@@ -11,6 +11,10 @@
  * @package    Mail_Autoconfig
  * @subpackage UnitTests
  */
+namespace Horde\Mail;
+use \Autoconfig\Driver;
+use Horde_Mail_Autoconfig_Driver_TestBase as TestBase;
+use \Horde_Mail_Autoconfig_Driver_Guess;
 
 /**
  * Tests for the Guess Driver.
@@ -23,8 +27,7 @@
  * @package    Mail_Autoconfig
  * @subpackage UnitTests
  */
-class Horde_Mail_Autoconfig_Driver_GuessTest
-extends Horde_Mail_Autoconfig_Driver_TestBase
+class GuessTest extends TestBase
 {
     protected function _getDriver()
     {

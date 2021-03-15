@@ -23,19 +23,18 @@
  * @package    Mail_Autoconfig
  * @subpackage UnitTests
  */
-abstract class Horde_Mail_Autoconfig_Driver_TestBase
-extends Horde_Test_Case
+abstract class Horde_Mail_Autoconfig_Driver_TestBase extends Horde_Test_Case
 {
     private $driver;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->driver = $this->_getDriver();
     }
 
     abstract protected function _getDriver();
 
-    public function tearDown()
+    public function tearDown(): void
     {
         unset($this->driver);
     }
