@@ -13,7 +13,7 @@
  */
 namespace Horde\Mail;
 use \Autoconfig;
-use Horde_Test_Case;
+use Horde_Test_Case as TestCase;
 use Horde_Mail_Autoconfig;
 
 /**
@@ -27,7 +27,7 @@ use Horde_Mail_Autoconfig;
  * @package    Mail_Autoconfig
  * @subpackage UnitTests
  */
-class AutoconfigTest extends Horde_Test_Case
+class AutoconfigTest extends TestCase
 {
     private $aconfig;
 

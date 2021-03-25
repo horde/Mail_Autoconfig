@@ -11,9 +11,7 @@
  * @package    Mail_Autoconfig
  * @subpackage UnitTests
  */
-namespace Horde\Mail;
-use \Autoconfig\Driver;
-use Horde_Mail_Autoconfig_Driver_TestBase as TestBase;
+namespace Horde\Mail\Autoconfig\Driver;
 use \Horde_Mail_Autoconfig_Driver_Thunderbird;
 
 /**

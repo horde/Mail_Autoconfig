@@ -11,6 +11,8 @@
  * @package    Mail_Autoconfig
  * @subpackage UnitTests
  */
+namespace Horde\Mail\Autoconfig\Driver;
+use Horde_Test_Case as TestCase;
 
 /**
  * Base driver for Tests for the SRV Driver.
@@ -23,7 +25,7 @@
  * @package    Mail_Autoconfig
  * @subpackage UnitTests
  */
-abstract class Horde_Mail_Autoconfig_Driver_TestBase extends Horde_Test_Case
+abstract class TestBase extends TestCase
 {
     private $driver;
 
