@@ -11,6 +11,8 @@
  * @package    Mail_Autoconfig
  * @subpackage UnitTests
  */
+namespace Horde\Mail\Autoconfig\Driver;
+use \Horde_Mail_Autoconfig_Driver_Thunderbird;
 
 /**
  * Tests for the Thunderbird Driver.
@@ -23,8 +25,7 @@
  * @package    Mail_Autoconfig
  * @subpackage UnitTests
  */
-class Horde_Mail_Autoconfig_Driver_ThunderbirdTest
-extends Horde_Mail_Autoconfig_Driver_TestBase
+class ThunderbirdTest extends TestBase
 {
     protected function _getDriver()
     {

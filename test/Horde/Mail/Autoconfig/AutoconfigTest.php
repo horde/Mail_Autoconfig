@@ -11,6 +11,10 @@
  * @package    Mail_Autoconfig
  * @subpackage UnitTests
  */
+namespace Horde\Mail;
+use \Autoconfig;
+use Horde_Test_Case as TestCase;
+use Horde_Mail_Autoconfig;
 
 /**
  * Tests for the base autoconfig object.
@@ -23,11 +27,11 @@
  * @package    Mail_Autoconfig
  * @subpackage UnitTests
  */
-class Horde_Mail_Autoconfig_AutoconfigTest extends Horde_Test_Case
+class AutoconfigTest extends TestCase
 {
     private $aconfig;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->aconfig = new Horde_Mail_Autoconfig();
     }
