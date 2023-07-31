@@ -81,10 +81,12 @@ class Horde_Mail_Autoconfig_Driver_Srv extends Horde_Mail_Autoconfig_Driver
             foreach ($queries as $val2) {
                 try {
                     $res = $this->dns->query($val2 . '._tcp.' . $val, 'SRV');
-                    foreach ($res->answer as $val3) {
-                        if (strlen($val3->target)) {
-                            $val3->query = $val2;
-                            $obs[$val3->priority][] = $val3;
+                    if ( ($res != NULL) && (property_exists($res, 'answer')) ) {
+                        foreach ($res->answer as $val3) {
+                            if (strlen($val3->target)) {
+                                $val3->query = $val2;
+                                $obs[$val3->priority][] = $val3;
+                            }
                         }
                     }
                 } catch (Net_DNS2_Exception $e) {
