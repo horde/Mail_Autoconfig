@@ -27,7 +27,7 @@ class Horde_Mail_Autoconfig_AutoconfigTest extends Horde_Test_Case
 {
     private $aconfig;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->aconfig = new Horde_Mail_Autoconfig();
     }

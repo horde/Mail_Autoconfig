@@ -28,14 +28,14 @@ extends Horde_Test_Case
 {
     private $driver;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->driver = $this->_getDriver();
     }
 
     abstract protected function _getDriver();
 
-    public function tearDown()
+    public function tearDown(): void
     {
         unset($this->driver);
     }
