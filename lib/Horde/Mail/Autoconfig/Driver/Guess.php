@@ -11,6 +11,9 @@
  * @package   Mail_Autoconfig
  */
 
+use NetDNS2\Resolver;
+use NetDNS2\Exception as DnsException;
+
 /**
  * Do simplistic guessing of hosts by appending common server names to domain.
  *
@@ -25,7 +28,7 @@ class Horde_Mail_Autoconfig_Driver_Guess extends Horde_Mail_Autoconfig_Driver
     /**
      * DNS resolver.
      *
-     * @var Net_DNS2_Resolver
+     * @var Resolver
      */
     public $dns;
 
@@ -114,14 +117,14 @@ class Horde_Mail_Autoconfig_Driver_Guess extends Horde_Mail_Autoconfig_Driver
         $out = array();
 
         if (is_null($this->dns)) {
-            $this->dns = new Net_DNS2_Resolver();
+            $this->dns = new Resolver();
         }
 
         foreach ($hosts as $val) {
             try {
                 $this->dns->query($val->host, 'A');
                 $out[] = $val;
-            } catch (Net_DNS2_Exception $e) {
+            } catch (DnsException $e) {
                 // Not found; ignore.
             }
         }
