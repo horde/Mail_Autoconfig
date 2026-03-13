@@ -32,6 +32,6 @@ dependencies:
       horde/imap_client: ^3
       horde/mail: ^3
       horde/smtp: ^2
-      pear/net_dns2: ^1.5
+      mikepultz/netdns2: ^2.0
     ext:
       SimpleXML: '*'

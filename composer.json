@@ -26,7 +26,7 @@
         "horde/imap_client": "^3 || dev-FRAMEWORK_6_0",
         "horde/mail": "^3 || dev-FRAMEWORK_6_0",
         "horde/smtp": "^2 || dev-FRAMEWORK_6_0",
-        "pear/net_dns2": "^1.5",
+        "mikepultz/netdns2": "^2.0",
         "ext-SimpleXML": "*"
     },
     "require-dev": {},
