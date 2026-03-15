@@ -9,7 +9,6 @@
     identifier: LGPL-2.1
     uri: http://www.horde.org/licenses/lgpl21
   notes: |+
-    
 2.0.0alpha4:
   api: 2.0.0alpha1
   state:
@@ -52,6 +51,26 @@
     identifier: LGPL-2.1
     uri: http://www.horde.org/licenses/lgpl21
   notes: ~
+2.0.0-alpha6:
+  api: 2.0.0-alpha6
+  state:
+    release: alpha
+    api: alpha
+  date: 2026-03-15
+  license:
+    identifier: LGPL-2.1-only
+    uri: https://spdx.org/licenses/LGPL-2.1-only.html
+  notes: |-
+    Merge pull request #2 from horde/feat/migrate-netdns2
+    feat: Migrate from pear/net_dns2 to mikepultz/netdns2
+    Development mode for Mail_Autoconfig-2.0.0alpha5
+    Released Mail_Autoconfig-2.0.0alpha4
+    Update metadata and workflows for PHP 8 support
+    Add CI job for satis repo update
+    Update bootstrap.php
+    ci.yml and bootstrap.php adapted
+    no errors left
+    Development mode for Mail_Autoconfig-2.0.0alpha5
 1.0.3:
   api: 1.0.0
   state:
@@ -85,17 +104,6 @@
     uri: http://www.horde.org/licenses/lgpl21
   notes: |
     [mms] Support IDN hostnames in e-mail address queries.
-1.0.0:
-  api: 1.0.0
-  state:
-    release: stable
-    api: stable
-  date: 2014-07-01
-  license:
-    identifier: LGPL-2.1
-    uri: http://www.horde.org/licenses/lgpl21
-  notes: |
-    First stable release.
 1.0.0beta2:
   api: 1.0.0
   state:
@@ -118,3 +126,14 @@
     uri: http://www.horde.org/licenses/lgpl21
   notes: |
     [mms] Initial release.
+1.0.0:
+  api: 1.0.0
+  state:
+    release: stable
+    api: stable
+  date: 2014-07-01
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: |
+    First stable release.
