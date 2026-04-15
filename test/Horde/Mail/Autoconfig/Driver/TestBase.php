@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2014-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2014-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -11,7 +12,9 @@
  * @package    Mail_Autoconfig
  * @subpackage UnitTests
  */
+
 namespace Horde\Mail\Autoconfig\Driver;
+
 use Horde_Test_Case as TestCase;
 
 /**
@@ -50,9 +53,9 @@ abstract class TestBase extends TestCase
             $this->markTestSkipped();
         }
 
-        $res = $this->driver->msaSearch($domains, array(
-            'email' => new Horde_Mail_Rfc822_Address('test@example.com')
-        ));
+        $res = $this->driver->msaSearch($domains, [
+            'email' => new Horde_Mail_Rfc822_Address('test@example.com'),
+        ]);
 
         $this->assertNotFalse($res);
         $this->assertNotEmpty($res);
@@ -70,9 +73,9 @@ abstract class TestBase extends TestCase
             $this->markTestSkipped();
         }
 
-        $res = $this->driver->mailSearch($domains, array(
-            'email' => new Horde_Mail_Rfc822_Address('test@example.com')
-        ));
+        $res = $this->driver->mailSearch($domains, [
+            'email' => new Horde_Mail_Rfc822_Address('test@example.com'),
+        ]);
 
         $this->assertNotFalse($res);
         $this->assertNotEmpty($res);
@@ -84,12 +87,12 @@ abstract class TestBase extends TestCase
     public function provider()
     {
         $config = self::getConfig('MAILAUTOCONFIG_TEST_CONFIG', __DIR__ . '/..');
-        if (!is_null($config) &&
-            !empty($config['mail_autoconfig']['domains'])) {
+        if (!is_null($config)
+            && !empty($config['mail_autoconfig']['domains'])) {
             return $config['mail_autoconfig']['domains'];
         }
 
-        return array(array(null));
+        return [[null]];
     }
 
 }

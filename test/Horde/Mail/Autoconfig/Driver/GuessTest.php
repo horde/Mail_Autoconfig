@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2014-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2014-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -11,8 +12,10 @@
  * @package    Mail_Autoconfig
  * @subpackage UnitTests
  */
+
 namespace Horde\Mail\Autoconfig\Driver;
-use \Horde_Mail_Autoconfig_Driver_Guess;
+
+use Horde_Mail_Autoconfig_Driver_Guess;
 
 /**
  * Tests for the Guess Driver.
@@ -24,6 +27,7 @@ use \Horde_Mail_Autoconfig_Driver_Guess;
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  * @package    Mail_Autoconfig
  * @subpackage UnitTests
+ * @coversNothing
  */
 class GuessTest extends TestBase
 {

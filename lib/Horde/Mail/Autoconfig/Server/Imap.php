@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2014-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2014-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -29,39 +30,39 @@ class Horde_Mail_Autoconfig_Server_Imap extends Horde_Mail_Autoconfig_Server
 
     /**
      */
-    public function valid(array $opts = array())
+    public function valid(array $opts = [])
     {
         if (empty($opts['users'])) {
             unset($opts['auth']);
             /* We still need a username as it is required by the IMAP
              * object. */
-            $opts['users'] = array('testing');
+            $opts['users'] = ['testing'];
         }
 
         switch ($this->tls) {
-        case 'starttls':
-            $secure = 'tls';
-            break;
+            case 'starttls':
+                $secure = 'tls';
+                break;
 
-        case 'tls':
-            $secure = 'ssl';
-            break;
+            case 'tls':
+                $secure = 'ssl';
+                break;
 
-        default:
-            $secure = !empty($opts['insecure']) ?: 'tls';
-            break;
+            default:
+                $secure = !empty($opts['insecure']) ?: 'tls';
+                break;
         }
 
         foreach ($opts['users'] as $user) {
             try {
-                $imap = new Horde_Imap_Client_Socket(array(
+                $imap = new Horde_Imap_Client_Socket([
                     'hostspec' => $this->host,
-                    'password' => isset($opts['auth']) ? $opts['auth'] : null,
+                    'password' => $opts['auth'] ?? null,
                     'port' => $this->port,
                     'secure' => $secure,
                     'timeout' => 2,
-                    'username' => $user
-                ));
+                    'username' => $user,
+                ]);
 
                 if (isset($opts['auth'])) {
                     $imap->login();
@@ -81,7 +82,8 @@ class Horde_Mail_Autoconfig_Server_Imap extends Horde_Mail_Autoconfig_Server
                 $imap->shutdown();
 
                 return true;
-            } catch (Horde_Imap_Client_Exception $e) {}
+            } catch (Horde_Imap_Client_Exception $e) {
+            }
         }
 
         return false;

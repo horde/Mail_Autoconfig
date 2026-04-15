@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2014-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2014-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -23,8 +24,7 @@
  * @license   http://www.horde.org/licenses/lgpl21 LGPL 2.1
  * @package   Mail_Autoconfig
  */
-class Horde_Mail_Autoconfig_Driver_Thunderbird
-extends Horde_Mail_Autoconfig_Driver
+class Horde_Mail_Autoconfig_Driver_Thunderbird extends Horde_Mail_Autoconfig_Driver
 {
     /**
      * Http client.
@@ -48,14 +48,14 @@ extends Horde_Mail_Autoconfig_Driver
 
     /**
      */
-    public function msaSearch($domains, array $opts = array())
+    public function msaSearch($domains, array $opts = [])
     {
         foreach ($domains as $val) {
             $res = $this->_process(
                 $val,
                 'outgoingServer',
-                array('smtp'),
-                isset($opts['email']) ? $opts['email'] : null
+                ['smtp'],
+                $opts['email'] ?? null
             );
             if ($res) {
                 return $res;
@@ -67,9 +67,9 @@ extends Horde_Mail_Autoconfig_Driver
 
     /**
      */
-    public function mailSearch($domains, array $opts = array())
+    public function mailSearch($domains, array $opts = [])
     {
-        $types = array();
+        $types = [];
         if (empty($opts['no_imap'])) {
             $types[] = 'imap';
         }
@@ -82,7 +82,7 @@ extends Horde_Mail_Autoconfig_Driver
                 $val,
                 'incomingServer',
                 $types,
-                isset($opts['email']) ? $opts['email'] : null
+                $opts['email'] ?? null
             );
             if ($res) {
                 return $res;
@@ -102,11 +102,11 @@ extends Horde_Mail_Autoconfig_Driver
      */
     protected function _process($domain, $tag, $types, $email)
     {
-        $out = array();
-        $urls = array(
+        $out = [];
+        $urls = [
             'http://' . urlencode($domain) . '/.well-known/autoconfig/mail/config-v1.1.xml',
-            $this->ispdb . urlencode($domain)
-        );
+            $this->ispdb . urlencode($domain),
+        ];
         if (!is_null($email)) {
             array_unshift(
                 $urls,
@@ -136,17 +136,17 @@ extends Horde_Mail_Autoconfig_Driver
                 foreach ($xml->emailProvider->{$tag} as $val) {
                     if (in_array($val['type'], $types)) {
                         switch ($val['type']) {
-                        case 'imap':
-                            $ob = new Horde_Mail_Autoconfig_Server_Imap();
-                            break;
+                            case 'imap':
+                                $ob = new Horde_Mail_Autoconfig_Server_Imap();
+                                break;
 
-                        case 'pop3':
-                            $ob = new Horde_Mail_Autoconfig_Server_Pop3();
-                            break;
+                            case 'pop3':
+                                $ob = new Horde_Mail_Autoconfig_Server_Pop3();
+                                break;
 
-                        case 'smtp':
-                            $ob = new Horde_Mail_Autoconfig_Server_Msa();
-                            break;
+                            case 'smtp':
+                                $ob = new Horde_Mail_Autoconfig_Server_Msa();
+                                break;
                         }
 
                         $ob->host = strval($val->hostname);
@@ -156,18 +156,18 @@ extends Horde_Mail_Autoconfig_Driver
                             $ob->tls = 'tls';
                         }
 
-                        if (!is_null($email) &&
-                            $email->valid &&
-                            strlen($val->username)) {
+                        if (!is_null($email)
+                            && $email->valid
+                            && strlen($val->username)) {
                             $ob->username = str_replace(
-                                array(
+                                [
                                     '%EMAILADDRESS%',
-                                    '%EMAILLOCALPART%'
-                                ),
-                                array(
+                                    '%EMAILLOCALPART%',
+                                ],
+                                [
                                     $email->bare_address,
-                                    $email->mailbox
-                                ),
+                                    $email->mailbox,
+                                ],
                                 $val->username
                             );
                         }

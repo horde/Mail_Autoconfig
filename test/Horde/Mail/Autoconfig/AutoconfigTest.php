@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2014-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2014-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -11,8 +12,10 @@
  * @package    Mail_Autoconfig
  * @subpackage UnitTests
  */
+
 namespace Horde\Mail;
-use \Autoconfig;
+
+use Autoconfig;
 use Horde_Test_Case as TestCase;
 use Horde_Mail_Autoconfig;
 
@@ -26,6 +29,7 @@ use Horde_Mail_Autoconfig;
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  * @package    Mail_Autoconfig
  * @subpackage UnitTests
+ * @coversNothing
  */
 class AutoconfigTest extends TestCase
 {
@@ -47,8 +51,8 @@ class AutoconfigTest extends TestCase
      */
     public function testGetMsaConfigWithoutAuth($email, $success)
     {
-       // if (!$email) {
-            $this->markTestSkipped();
+        // if (!$email) {
+        $this->markTestSkipped();
         //}
 
         $config = $this->aconfig->getMsaConfig($email);
@@ -66,7 +70,7 @@ class AutoconfigTest extends TestCase
     public function testGetMailConfigWithoutAuth($email, $success)
     {
         //if (!$email) {
-            $this->markTestSkipped();
+        $this->markTestSkipped();
         //}
 
         $config = $this->aconfig->getMailConfig($email);
@@ -82,17 +86,17 @@ class AutoconfigTest extends TestCase
     {
         $config = self::getConfig('MAILAUTOCONFIG_TEST_CONFIG');
         if (!is_null($config)) {
-            $out = array();
+            $out = [];
 
             if (!empty($config['mail_autoconfig']['nonauth_emails'])) {
                 foreach ($config['mail_autoconfig']['nonauth_emails'] as $val) {
-                    $out[] = array($val, true);
+                    $out[] = [$val, true];
                 }
             }
 
             if (!empty($config['mail_autoconfig']['nonauth_emails_bad'])) {
                 foreach ($config['mail_autoconfig']['nonauth_emails_bad'] as $val) {
-                    $out[] = array($val, false);
+                    $out[] = [$val, false];
                 }
             }
 
@@ -101,7 +105,7 @@ class AutoconfigTest extends TestCase
             }
         }
 
-        return array(array(null, null));
+        return [[null, null]];
     }
 
 }

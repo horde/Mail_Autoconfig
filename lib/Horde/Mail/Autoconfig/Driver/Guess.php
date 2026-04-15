@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2014-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2014-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -40,9 +41,9 @@ class Horde_Mail_Autoconfig_Driver_Guess extends Horde_Mail_Autoconfig_Driver
 
     /**
      */
-    public function msaSearch($domains, array $opts = array())
+    public function msaSearch($domains, array $opts = [])
     {
-        $out = array();
+        $out = [];
 
         foreach ($domains as $val) {
             $tmp = new Horde_Mail_Autoconfig_Server_Msa();
@@ -65,9 +66,9 @@ class Horde_Mail_Autoconfig_Driver_Guess extends Horde_Mail_Autoconfig_Driver
 
     /**
      */
-    public function mailSearch($domains, array $opts = array())
+    public function mailSearch($domains, array $opts = [])
     {
-        $out = array();
+        $out = [];
 
         foreach ($domains as $val) {
             $tmp = new Horde_Mail_Autoconfig_Server_Imap();
@@ -80,14 +81,14 @@ class Horde_Mail_Autoconfig_Driver_Guess extends Horde_Mail_Autoconfig_Driver
         }
 
         foreach ($out as $val) {
-            if (empty($opts['no_imap']) &&
-                ($val instanceof Horde_Mail_Autoconfig_Server_Imap)) {
+            if (empty($opts['no_imap'])
+                && ($val instanceof Horde_Mail_Autoconfig_Server_Imap)) {
                 $tmp = clone $val;
                 $tmp->host = 'imap.' . $tmp->host;
                 $out[] = $tmp;
             }
-            if (empty($opts['no_pop3']) &&
-                ($val instanceof Horde_Mail_Autoconfig_Server_Pop3)) {
+            if (empty($opts['no_pop3'])
+                && ($val instanceof Horde_Mail_Autoconfig_Server_Pop3)) {
                 $tmp = clone $val;
                 $tmp->host = 'pop.' . $tmp->host;
                 $out[] = $tmp;
@@ -114,7 +115,7 @@ class Horde_Mail_Autoconfig_Driver_Guess extends Horde_Mail_Autoconfig_Driver
      */
     protected function _resolveHosts($hosts)
     {
-        $out = array();
+        $out = [];
 
         if (is_null($this->dns)) {
             $this->dns = new Resolver();

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2014-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2014-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -29,37 +30,37 @@ class Horde_Mail_Autoconfig_Server_Msa extends Horde_Mail_Autoconfig_Server
 
     /**
      */
-    public function valid(array $opts = array())
+    public function valid(array $opts = [])
     {
         if (empty($opts['users']) || !isset($opts['auth'])) {
             unset($opts['auth']);
-            $opts['users'] = array(null);
+            $opts['users'] = [null];
         }
 
         switch ($this->tls) {
-        case 'starttls':
-            $secure = 'tls';
-            break;
+            case 'starttls':
+                $secure = 'tls';
+                break;
 
-        case 'tls':
-            $secure = 'ssl';
-            break;
+            case 'tls':
+                $secure = 'ssl';
+                break;
 
-        default:
-            $secure = !empty($opts['insecure']) ?: 'tls';
-            break;
+            default:
+                $secure = !empty($opts['insecure']) ?: 'tls';
+                break;
         }
 
         foreach ($opts['users'] as $user) {
             try {
-                $smtp = new Horde_Smtp(array(
+                $smtp = new Horde_Smtp([
                     'host' => $this->host,
-                    'password' => isset($opts['auth']) ? $opts['auth'] : null,
+                    'password' => $opts['auth'] ?? null,
                     'port' => $this->port,
                     'secure' => $secure,
                     'timeout' => 2,
-                    'username' => $user
-                ));
+                    'username' => $user,
+                ]);
                 $smtp->noop();
 
                 if (isset($opts['auth'])) {
@@ -77,7 +78,8 @@ class Horde_Mail_Autoconfig_Server_Msa extends Horde_Mail_Autoconfig_Server
                 $smtp->shutdown();
 
                 return true;
-            } catch (Horde_Smtp_Exception $e) {}
+            } catch (Horde_Smtp_Exception $e) {
+            }
         }
 
         return false;
