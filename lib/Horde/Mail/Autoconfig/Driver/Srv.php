@@ -86,7 +86,7 @@ class Horde_Mail_Autoconfig_Driver_Srv extends Horde_Mail_Autoconfig_Driver
                 try {
                     $res = $this->dns->query($val2 . '._tcp.' . $val, 'SRV');
                     foreach ($res->answer as $val3) {
-                        if (strlen($val3->target)) {
+                        if (strlen((string) $val3->target)) {
                             $val3->query = $val2;
                             $obs[$val3->priority][] = $val3;
                         }

@@ -93,19 +93,19 @@ class ThunderbirdTest extends TestCase
     public function testMsaSearchParsesXmlResponse(): void
     {
         $xml = <<<'XML'
-<?xml version="1.0" encoding="UTF-8"?>
-<clientConfig version="1.1">
-  <emailProvider id="example.com">
-    <displayName>Example Mail</displayName>
-    <outgoingServer type="smtp">
-      <hostname>smtp.example.com</hostname>
-      <port>587</port>
-      <socketType>STARTTLS</socketType>
-      <username>%EMAILADDRESS%</username>
-    </outgoingServer>
-  </emailProvider>
-</clientConfig>
-XML;
+            <?xml version="1.0" encoding="UTF-8"?>
+            <clientConfig version="1.1">
+              <emailProvider id="example.com">
+                <displayName>Example Mail</displayName>
+                <outgoingServer type="smtp">
+                  <hostname>smtp.example.com</hostname>
+                  <port>587</port>
+                  <socketType>STARTTLS</socketType>
+                  <username>%EMAILADDRESS%</username>
+                </outgoingServer>
+              </emailProvider>
+            </clientConfig>
+            XML;
 
         $response = $this->createMock(Horde_Http_Response_Base::class);
         $response->code = 200;
@@ -131,25 +131,25 @@ XML;
     public function testMailSearchParsesIncomingServers(): void
     {
         $xml = <<<'XML'
-<?xml version="1.0" encoding="UTF-8"?>
-<clientConfig version="1.1">
-  <emailProvider id="example.com">
-    <displayName>Example Mail</displayName>
-    <incomingServer type="imap">
-      <hostname>imap.example.com</hostname>
-      <port>993</port>
-      <socketType>SSL</socketType>
-      <username>%EMAILADDRESS%</username>
-    </incomingServer>
-    <incomingServer type="pop3">
-      <hostname>pop.example.com</hostname>
-      <port>995</port>
-      <socketType>SSL</socketType>
-      <username>%EMAILADDRESS%</username>
-    </incomingServer>
-  </emailProvider>
-</clientConfig>
-XML;
+            <?xml version="1.0" encoding="UTF-8"?>
+            <clientConfig version="1.1">
+              <emailProvider id="example.com">
+                <displayName>Example Mail</displayName>
+                <incomingServer type="imap">
+                  <hostname>imap.example.com</hostname>
+                  <port>993</port>
+                  <socketType>SSL</socketType>
+                  <username>%EMAILADDRESS%</username>
+                </incomingServer>
+                <incomingServer type="pop3">
+                  <hostname>pop.example.com</hostname>
+                  <port>995</port>
+                  <socketType>SSL</socketType>
+                  <username>%EMAILADDRESS%</username>
+                </incomingServer>
+              </emailProvider>
+            </clientConfig>
+            XML;
 
         $response = $this->createMock(Horde_Http_Response_Base::class);
         $response->code = 200;
@@ -175,25 +175,25 @@ XML;
     public function testMailSearchRespectsNoImapOption(): void
     {
         $xml = <<<'XML'
-<?xml version="1.0" encoding="UTF-8"?>
-<clientConfig version="1.1">
-  <emailProvider id="example.com">
-    <displayName>Example Mail</displayName>
-    <incomingServer type="imap">
-      <hostname>imap.example.com</hostname>
-      <port>993</port>
-      <socketType>SSL</socketType>
-      <username>%EMAILADDRESS%</username>
-    </incomingServer>
-    <incomingServer type="pop3">
-      <hostname>pop.example.com</hostname>
-      <port>995</port>
-      <socketType>SSL</socketType>
-      <username>%EMAILADDRESS%</username>
-    </incomingServer>
-  </emailProvider>
-</clientConfig>
-XML;
+            <?xml version="1.0" encoding="UTF-8"?>
+            <clientConfig version="1.1">
+              <emailProvider id="example.com">
+                <displayName>Example Mail</displayName>
+                <incomingServer type="imap">
+                  <hostname>imap.example.com</hostname>
+                  <port>993</port>
+                  <socketType>SSL</socketType>
+                  <username>%EMAILADDRESS%</username>
+                </incomingServer>
+                <incomingServer type="pop3">
+                  <hostname>pop.example.com</hostname>
+                  <port>995</port>
+                  <socketType>SSL</socketType>
+                  <username>%EMAILADDRESS%</username>
+                </incomingServer>
+              </emailProvider>
+            </clientConfig>
+            XML;
 
         $response = $this->createMock(Horde_Http_Response_Base::class);
         $response->code = 200;
@@ -220,25 +220,25 @@ XML;
     public function testMailSearchRespectsNoPop3Option(): void
     {
         $xml = <<<'XML'
-<?xml version="1.0" encoding="UTF-8"?>
-<clientConfig version="1.1">
-  <emailProvider id="example.com">
-    <displayName>Example Mail</displayName>
-    <incomingServer type="imap">
-      <hostname>imap.example.com</hostname>
-      <port>993</port>
-      <socketType>SSL</socketType>
-      <username>%EMAILADDRESS%</username>
-    </incomingServer>
-    <incomingServer type="pop3">
-      <hostname>pop.example.com</hostname>
-      <port>995</port>
-      <socketType>SSL</socketType>
-      <username>%EMAILADDRESS%</username>
-    </incomingServer>
-  </emailProvider>
-</clientConfig>
-XML;
+            <?xml version="1.0" encoding="UTF-8"?>
+            <clientConfig version="1.1">
+              <emailProvider id="example.com">
+                <displayName>Example Mail</displayName>
+                <incomingServer type="imap">
+                  <hostname>imap.example.com</hostname>
+                  <port>993</port>
+                  <socketType>SSL</socketType>
+                  <username>%EMAILADDRESS%</username>
+                </incomingServer>
+                <incomingServer type="pop3">
+                  <hostname>pop.example.com</hostname>
+                  <port>995</port>
+                  <socketType>SSL</socketType>
+                  <username>%EMAILADDRESS%</username>
+                </incomingServer>
+              </emailProvider>
+            </clientConfig>
+            XML;
 
         $response = $this->createMock(Horde_Http_Response_Base::class);
         $response->code = 200;
@@ -265,19 +265,19 @@ XML;
     public function testUsernameSubstitution(): void
     {
         $xml = <<<'XML'
-<?xml version="1.0" encoding="UTF-8"?>
-<clientConfig version="1.1">
-  <emailProvider id="example.com">
-    <displayName>Example Mail</displayName>
-    <outgoingServer type="smtp">
-      <hostname>smtp.example.com</hostname>
-      <port>587</port>
-      <socketType>STARTTLS</socketType>
-      <username>%EMAILADDRESS%</username>
-    </outgoingServer>
-  </emailProvider>
-</clientConfig>
-XML;
+            <?xml version="1.0" encoding="UTF-8"?>
+            <clientConfig version="1.1">
+              <emailProvider id="example.com">
+                <displayName>Example Mail</displayName>
+                <outgoingServer type="smtp">
+                  <hostname>smtp.example.com</hostname>
+                  <port>587</port>
+                  <socketType>STARTTLS</socketType>
+                  <username>%EMAILADDRESS%</username>
+                </outgoingServer>
+              </emailProvider>
+            </clientConfig>
+            XML;
 
         $response = $this->createMock(Horde_Http_Response_Base::class);
         $response->code = 200;
@@ -299,19 +299,19 @@ XML;
     public function testUsernameSubstitutionLocalPart(): void
     {
         $xml = <<<'XML'
-<?xml version="1.0" encoding="UTF-8"?>
-<clientConfig version="1.1">
-  <emailProvider id="example.com">
-    <displayName>Example Mail</displayName>
-    <outgoingServer type="smtp">
-      <hostname>smtp.example.com</hostname>
-      <port>587</port>
-      <socketType>STARTTLS</socketType>
-      <username>%EMAILLOCALPART%</username>
-    </outgoingServer>
-  </emailProvider>
-</clientConfig>
-XML;
+            <?xml version="1.0" encoding="UTF-8"?>
+            <clientConfig version="1.1">
+              <emailProvider id="example.com">
+                <displayName>Example Mail</displayName>
+                <outgoingServer type="smtp">
+                  <hostname>smtp.example.com</hostname>
+                  <port>587</port>
+                  <socketType>STARTTLS</socketType>
+                  <username>%EMAILLOCALPART%</username>
+                </outgoingServer>
+              </emailProvider>
+            </clientConfig>
+            XML;
 
         $response = $this->createMock(Horde_Http_Response_Base::class);
         $response->code = 200;
@@ -333,19 +333,19 @@ XML;
     public function testSslSocketTypeSetsCorrectTls(): void
     {
         $xml = <<<'XML'
-<?xml version="1.0" encoding="UTF-8"?>
-<clientConfig version="1.1">
-  <emailProvider id="example.com">
-    <displayName>Example Mail</displayName>
-    <incomingServer type="imap">
-      <hostname>imap.example.com</hostname>
-      <port>993</port>
-      <socketType>SSL</socketType>
-      <username>%EMAILADDRESS%</username>
-    </incomingServer>
-  </emailProvider>
-</clientConfig>
-XML;
+            <?xml version="1.0" encoding="UTF-8"?>
+            <clientConfig version="1.1">
+              <emailProvider id="example.com">
+                <displayName>Example Mail</displayName>
+                <incomingServer type="imap">
+                  <hostname>imap.example.com</hostname>
+                  <port>993</port>
+                  <socketType>SSL</socketType>
+                  <username>%EMAILADDRESS%</username>
+                </incomingServer>
+              </emailProvider>
+            </clientConfig>
+            XML;
 
         $response = $this->createMock(Horde_Http_Response_Base::class);
         $response->code = 200;
@@ -362,5 +362,73 @@ XML;
 
         $this->assertIsArray($result);
         $this->assertSame('tls', $result[0]->tls);
+    }
+
+    public function testEmptyUsernameTemplateDoesNotSetUsername(): void
+    {
+        $xml = <<<'XML'
+            <?xml version="1.0" encoding="UTF-8"?>
+            <clientConfig version="1.1">
+              <emailProvider id="example.com">
+                <displayName>Example Mail</displayName>
+                <outgoingServer type="smtp">
+                  <hostname>smtp.example.com</hostname>
+                  <port>587</port>
+                  <socketType>STARTTLS</socketType>
+                  <username></username>
+                </outgoingServer>
+              </emailProvider>
+            </clientConfig>
+            XML;
+
+        $response = $this->createMock(Horde_Http_Response_Base::class);
+        $response->code = 200;
+        $response->method('getBody')->willReturn($xml);
+
+        $http = $this->createMock(Horde_Http_Client::class);
+        $http->method('get')->willReturn($response);
+        $this->driver->http = $http;
+
+        $result = $this->driver->msaSearch(
+            ['example.com'],
+            ['email' => new Horde_Mail_Rfc822_Address('user@example.com')],
+        );
+
+        $this->assertIsArray($result);
+        $this->assertNull($result[0]->username);
+    }
+
+    public function testNonSslSocketTypeDoesNotSetTls(): void
+    {
+        $xml = <<<'XML'
+            <?xml version="1.0" encoding="UTF-8"?>
+            <clientConfig version="1.1">
+              <emailProvider id="example.com">
+                <displayName>Example Mail</displayName>
+                <outgoingServer type="smtp">
+                  <hostname>smtp.example.com</hostname>
+                  <port>587</port>
+                  <socketType>STARTTLS</socketType>
+                  <username>%EMAILADDRESS%</username>
+                </outgoingServer>
+              </emailProvider>
+            </clientConfig>
+            XML;
+
+        $response = $this->createMock(Horde_Http_Response_Base::class);
+        $response->code = 200;
+        $response->method('getBody')->willReturn($xml);
+
+        $http = $this->createMock(Horde_Http_Client::class);
+        $http->method('get')->willReturn($response);
+        $this->driver->http = $http;
+
+        $result = $this->driver->msaSearch(
+            ['example.com'],
+            ['email' => new Horde_Mail_Rfc822_Address('user@example.com')],
+        );
+
+        $this->assertIsArray($result);
+        $this->assertNull($result[0]->tls);
     }
 }
