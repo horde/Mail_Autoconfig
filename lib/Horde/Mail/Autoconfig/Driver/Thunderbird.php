@@ -38,7 +38,7 @@ class Horde_Mail_Autoconfig_Driver_Thunderbird extends Horde_Mail_Autoconfig_Dri
      *
      * @var string
      */
-    public $ispdb = 'https://live.mozillamessaging.com/autoconfig/v1.1/';
+    public $ispdb = 'https://autoconfig.thunderbird.net/v1.1/';
 
     /**
      * Medium priority: not standardized (i.e. RFC), but API is actively
