@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright 2014-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2014-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -40,17 +41,17 @@ class Horde_Mail_Autoconfig_Driver_Srv extends Horde_Mail_Autoconfig_Driver
 
     /**
      */
-    public function msaSearch($domains, array $opts = array())
+    public function msaSearch($domains, array $opts = [])
     {
-        $queries = array('_submission');
+        $queries = ['_submission'];
         return $this->_srvSearch($domains, $queries);
     }
 
     /**
      */
-    public function mailSearch($domains, array $opts = array())
+    public function mailSearch($domains, array $opts = [])
     {
-        $queries = array();
+        $queries = [];
         if (empty($opts['no_imap'])) {
             $queries[] = '_imap';
             $queries[] = '_imaps';
@@ -74,7 +75,7 @@ class Horde_Mail_Autoconfig_Driver_Srv extends Horde_Mail_Autoconfig_Driver
      */
     protected function _srvSearch($domains, $queries)
     {
-        $obs = $out = array();
+        $obs = $out = [];
 
         if (is_null($this->dns)) {
             $this->dns = new Resolver();
@@ -110,7 +111,7 @@ class Horde_Mail_Autoconfig_Driver_Srv extends Horde_Mail_Autoconfig_Driver
                 /* Weight determination algorithm is defined in RFC 2782.
                  * First, move all entries with weight 0 to beginning of
                  * list. */
-                $tmp = array();
+                $tmp = [];
                 foreach ($val as $key2 => $val2) {
                     if (empty($val2->weight)) {
                         $tmp[] = $val2;
@@ -119,7 +120,7 @@ class Horde_Mail_Autoconfig_Driver_Srv extends Horde_Mail_Autoconfig_Driver
                 }
                 $tmp = array_merge($tmp, $val);
 
-                $val = array();
+                $val = [];
 
                 while (count($tmp) > 1) {
                     $i = 0;
@@ -154,27 +155,27 @@ class Horde_Mail_Autoconfig_Driver_Srv extends Horde_Mail_Autoconfig_Driver
 
             foreach ($val as $val2) {
                 switch ($val2->query) {
-                case '_imap':
-                    $tmp = new Horde_Mail_Autoconfig_Server_Imap();
-                    break;
+                    case '_imap':
+                        $tmp = new Horde_Mail_Autoconfig_Server_Imap();
+                        break;
 
-                case '_imaps':
-                    $tmp = new Horde_Mail_Autoconfig_Server_Imap();
-                    $tmp->tls = 'tls';
-                    break;
+                    case '_imaps':
+                        $tmp = new Horde_Mail_Autoconfig_Server_Imap();
+                        $tmp->tls = 'tls';
+                        break;
 
-                case '_pop3':
-                    $tmp = new Horde_Mail_Autoconfig_Server_Pop3();
-                    break;
+                    case '_pop3':
+                        $tmp = new Horde_Mail_Autoconfig_Server_Pop3();
+                        break;
 
-                case '_pop3s':
-                    $tmp = new Horde_Mail_Autoconfig_Server_Pop3();
-                    $tmp->tls = 'tls';
-                    break;
+                    case '_pop3s':
+                        $tmp = new Horde_Mail_Autoconfig_Server_Pop3();
+                        $tmp->tls = 'tls';
+                        break;
 
-                case '_submission':
-                    $tmp = new Horde_Mail_Autoconfig_Server_Msa();
-                    break;
+                    case '_submission':
+                        $tmp = new Horde_Mail_Autoconfig_Server_Msa();
+                        break;
                 }
 
                 $tmp->host = strval($val2->target);
