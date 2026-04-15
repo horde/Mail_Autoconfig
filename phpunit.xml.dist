@@ -1,13 +1,21 @@
-<?xml version="1.0"?>
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="test/Horde/Mail/Autoconfig/bootstrap.php" colors="true" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
-  <coverage>
-    <include>
-      <directory suffix=".php">lib</directory>
-    </include>
-  </coverage>
-  <testsuites>
-    <testsuite name="horde/Mail/Autoconfig">
-      <directory>test</directory>
-    </testsuite>
-  </testsuites>
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.5/phpunit.xsd"
+    bootstrap="vendor/autoload.php"
+    colors="true"
+>
+    <source>
+        <include>
+            <directory suffix=".php">lib</directory>
+        </include>
+    </source>
+    <testsuites>
+        <testsuite name="unit">
+            <directory>test/Unit</directory>
+        </testsuite>
+        <testsuite name="integration">
+            <directory>test/Integration</directory>
+        </testsuite>
+    </testsuites>
 </phpunit>
