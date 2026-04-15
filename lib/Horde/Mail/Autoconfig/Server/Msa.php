@@ -47,7 +47,9 @@ class Horde_Mail_Autoconfig_Server_Msa extends Horde_Mail_Autoconfig_Server
                 break;
 
             default:
-                $secure = !empty($opts['insecure']) ?: 'tls';
+                // true = insecure, let the client auto-detect TLS capability
+                // 'tls' = require STARTTLS negotiation
+                $secure = !empty($opts['insecure']) ? true : 'tls';
                 break;
         }
 
@@ -70,7 +72,7 @@ class Horde_Mail_Autoconfig_Server_Msa extends Horde_Mail_Autoconfig_Server
                 if ($secure === 'tls') {
                     $this->tls = 'starttls';
                 } elseif ($secure === true) {
-                    $this->tls = $pop3->isSecureConnection()
+                    $this->tls = $smtp->isSecureConnection()
                         ? 'starttls'
                         : false;
                 }
