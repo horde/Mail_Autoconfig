@@ -51,6 +51,21 @@
     identifier: LGPL-2.1
     uri: http://www.horde.org/licenses/lgpl21
   notes: ~
+2.0.0-beta1:
+  api: 2.0.0-beta1
+  state:
+    release: beta
+    api: beta
+  date: 2026-04-17
+  license:
+    identifier: LGPL-2.1-only
+    uri: https://spdx.org/licenses/LGPL-2.1-only.html
+  notes: |-
+    docs: Add README, UPGRADING and EXTENDING documents
+    test: Amend unit tests to support the new-style library
+    fix: Backport updated mozilla discovery URL
+    feat: PSR-4 modern OO implementation of Autoconfig
+    fix: various null safety issues
 2.0.0-alpha7:
   api: 2.0.0-alpha7
   state:
