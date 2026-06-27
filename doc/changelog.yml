@@ -1,56 +1,14 @@
 ---
-2.0.0alpha5:
-  api: 2.0.0alpha1
-  state:
-    release: alpha
-    api: alpha
-  date: 2022-11-05
-  license:
-    identifier: LGPL-2.1
-    uri: http://www.horde.org/licenses/lgpl21
-  notes: |+
-2.0.0alpha4:
-  api: 2.0.0alpha1
-  state:
-    release: alpha
-    api: alpha
-  date: 2022-11-05
-  license:
-    identifier: LGPL-2.1
-    uri: http://www.horde.org/licenses/lgpl21
-  notes: |
-    [rla] Alpha Release for PHP 8.
-    |+
-2.0.0alpha3:
-  api: 2.0.0alpha1
-  state:
-    release: alpha
-    api: alpha
-  date: 2021-03-13
-  license:
-    identifier: LGPL-2.1
-    uri: http://www.horde.org/licenses/lgpl21
-  notes: |+
-2.0.0alpha2:
-  api: 2.0.0alpha1
-  state:
-    release: alpha
-    api: alpha
-  date: 2021-02-24
-  license:
-    identifier: LGPL-2.1
-    uri: http://www.horde.org/licenses/lgpl21
-  notes: |+
-2.0.0alpha1:
-  api: 2.0.0alpha1
+2.0.0:
+  api: 2.0.0
   state:
     release: stable
     api: stable
-  date: 2021-02-24
+  date: 2026-06-27
   license:
-    identifier: LGPL-2.1
-    uri: http://www.horde.org/licenses/lgpl21
-  notes: ~
+    identifier: LGPL-2.1-only
+    uri: https://spdx.org/licenses/LGPL-2.1-only.html
+  notes: "chore: refresh qc fixes and platform deps\nchore: Update workflow dependency"
 2.0.0-beta1:
   api: 2.0.0-beta1
   state:
@@ -60,12 +18,7 @@
   license:
     identifier: LGPL-2.1-only
     uri: https://spdx.org/licenses/LGPL-2.1-only.html
-  notes: |-
-    docs: Add README, UPGRADING and EXTENDING documents
-    test: Amend unit tests to support the new-style library
-    fix: Backport updated mozilla discovery URL
-    feat: PSR-4 modern OO implementation of Autoconfig
-    fix: various null safety issues
+  notes: "docs: Add README, UPGRADING and EXTENDING documents\ntest: Amend unit tests to support the new-style library\nfix: Backport updated mozilla discovery URL\nfeat: PSR-4 modern OO implementation of Autoconfig\nfix: various null safety issues"
 2.0.0-alpha7:
   api: 2.0.0-alpha7
   state:
@@ -75,9 +28,7 @@
   license:
     identifier: LGPL-2.1-only
     uri: https://spdx.org/licenses/LGPL-2.1-only.html
-  notes: |-
-    test: Modernize test suite
-    style: php-cs-fixer
+  notes: "test: Modernize test suite\nstyle: php-cs-fixer"
 2.0.0-alpha6:
   api: 2.0.0-alpha6
   state:
@@ -87,17 +38,57 @@
   license:
     identifier: LGPL-2.1-only
     uri: https://spdx.org/licenses/LGPL-2.1-only.html
-  notes: |-
-    Merge pull request #2 from horde/feat/migrate-netdns2
-    feat: Migrate from pear/net_dns2 to mikepultz/netdns2
-    Development mode for Mail_Autoconfig-2.0.0alpha5
-    Released Mail_Autoconfig-2.0.0alpha4
-    Update metadata and workflows for PHP 8 support
-    Add CI job for satis repo update
-    Update bootstrap.php
-    ci.yml and bootstrap.php adapted
-    no errors left
-    Development mode for Mail_Autoconfig-2.0.0alpha5
+  notes: "Merge pull request #2 from horde/feat/migrate-netdns2\nfeat: Migrate from pear/net_dns2 to mikepultz/netdns2\nDevelopment mode for Mail_Autoconfig-2.0.0alpha5\nReleased Mail_Autoconfig-2.0.0alpha4\nUpdate metadata and workflows for PHP 8 support\nAdd CI job for satis repo update\nUpdate bootstrap.php\nci.yml and bootstrap.php adapted\nno errors left\nDevelopment mode for Mail_Autoconfig-2.0.0alpha5"
+2.0.0alpha5:
+  api: 2.0.0alpha1
+  state:
+    release: alpha
+    api: alpha
+  date: 2022-11-05
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: ''
+2.0.0alpha4:
+  api: 2.0.0alpha1
+  state:
+    release: alpha
+    api: alpha
+  date: 2022-11-05
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: "[rla] Alpha Release for PHP 8.\n|+\n"
+2.0.0alpha3:
+  api: 2.0.0alpha1
+  state:
+    release: alpha
+    api: alpha
+  date: 2021-03-13
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: ''
+2.0.0alpha2:
+  api: 2.0.0alpha1
+  state:
+    release: alpha
+    api: alpha
+  date: 2021-02-24
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: ''
+2.0.0alpha1:
+  api: 2.0.0alpha1
+  state:
+    release: stable
+    api: stable
+  date: 2021-02-24
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: null
 1.0.3:
   api: 1.0.0
   state:
@@ -107,8 +98,7 @@
   license:
     identifier: LGPL-2.1
     uri: http://www.horde.org/licenses/lgpl21
-  notes: |
-    [jan] Mark PHP 7 as supported.
+  notes: "[jan] Mark PHP 7 as supported.\n"
 1.0.2:
   api: 1.0.0
   state:
@@ -118,8 +108,7 @@
   license:
     identifier: LGPL-2.1
     uri: http://www.horde.org/licenses/lgpl21
-  notes: |
-    [jan] Improve PSR-2 compatibility.
+  notes: "[jan] Improve PSR-2 compatibility.\n"
 1.0.1:
   api: 1.0.0
   state:
@@ -129,30 +118,7 @@
   license:
     identifier: LGPL-2.1
     uri: http://www.horde.org/licenses/lgpl21
-  notes: |
-    [mms] Support IDN hostnames in e-mail address queries.
-1.0.0beta2:
-  api: 1.0.0
-  state:
-    release: beta
-    api: beta
-  date: 2014-06-04
-  license:
-    identifier: LGPL-2.1
-    uri: http://www.horde.org/licenses/lgpl21
-  notes: |
-    [mms] Fix verification of IMAP and POP3 servers (Bug #13205).
-1.0.0beta1:
-  api: 1.0.0
-  state:
-    release: beta
-    api: beta
-  date: 2014-05-21
-  license:
-    identifier: LGPL-2.1
-    uri: http://www.horde.org/licenses/lgpl21
-  notes: |
-    [mms] Initial release.
+  notes: "[mms] Support IDN hostnames in e-mail address queries.\n"
 1.0.0:
   api: 1.0.0
   state:
@@ -162,5 +128,24 @@
   license:
     identifier: LGPL-2.1
     uri: http://www.horde.org/licenses/lgpl21
-  notes: |
-    First stable release.
+  notes: "First stable release.\n"
+1.0.0beta2:
+  api: 1.0.0
+  state:
+    release: beta
+    api: beta
+  date: 2014-06-04
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: "[mms] Fix verification of IMAP and POP3 servers (Bug #13205).\n"
+1.0.0beta1:
+  api: 1.0.0
+  state:
+    release: beta
+    api: beta
+  date: 2014-05-21
+  license:
+    identifier: LGPL-2.1
+    uri: http://www.horde.org/licenses/lgpl21
+  notes: "[mms] Initial release.\n"
