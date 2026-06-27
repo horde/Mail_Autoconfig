@@ -16,6 +16,4 @@ use RuntimeException;
 /**
  * Exception thrown by the Mail Autoconfig component.
  */
-class AutoconfigException extends RuntimeException
-{
-}
+class AutoconfigException extends RuntimeException {}

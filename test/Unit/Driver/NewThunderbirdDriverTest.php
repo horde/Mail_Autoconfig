@@ -34,19 +34,19 @@ class NewThunderbirdDriverTest extends TestCase
     public function testSearchMsaWithSmtpServer(): void
     {
         $xml = <<<'XML'
-<?xml version="1.0"?>
-<clientConfig>
-  <emailProvider>
-    <displayName>Example Mail</displayName>
-    <outgoingServer type="smtp">
-      <hostname>smtp.example.com</hostname>
-      <port>465</port>
-      <socketType>SSL</socketType>
-      <username>%EMAILADDRESS%</username>
-    </outgoingServer>
-  </emailProvider>
-</clientConfig>
-XML;
+            <?xml version="1.0"?>
+            <clientConfig>
+              <emailProvider>
+                <displayName>Example Mail</displayName>
+                <outgoingServer type="smtp">
+                  <hostname>smtp.example.com</hostname>
+                  <port>465</port>
+                  <socketType>SSL</socketType>
+                  <username>%EMAILADDRESS%</username>
+                </outgoingServer>
+              </emailProvider>
+            </clientConfig>
+            XML;
 
         $this->mockHttpResponse(200, $xml);
 
@@ -65,19 +65,19 @@ XML;
     public function testSearchMailImapServer(): void
     {
         $xml = <<<'XML'
-<?xml version="1.0"?>
-<clientConfig>
-  <emailProvider>
-    <displayName>Example</displayName>
-    <incomingServer type="imap">
-      <hostname>imap.example.com</hostname>
-      <port>993</port>
-      <socketType>SSL</socketType>
-      <username>%EMAILLOCALPART%</username>
-    </incomingServer>
-  </emailProvider>
-</clientConfig>
-XML;
+            <?xml version="1.0"?>
+            <clientConfig>
+              <emailProvider>
+                <displayName>Example</displayName>
+                <incomingServer type="imap">
+                  <hostname>imap.example.com</hostname>
+                  <port>993</port>
+                  <socketType>SSL</socketType>
+                  <username>%EMAILLOCALPART%</username>
+                </incomingServer>
+              </emailProvider>
+            </clientConfig>
+            XML;
 
         $this->mockHttpResponse(200, $xml);
 
@@ -95,19 +95,19 @@ XML;
     public function testSearchMailStartTls(): void
     {
         $xml = <<<'XML'
-<?xml version="1.0"?>
-<clientConfig>
-  <emailProvider>
-    <displayName>Example</displayName>
-    <incomingServer type="imap">
-      <hostname>imap.example.com</hostname>
-      <port>143</port>
-      <socketType>STARTTLS</socketType>
-      <username>%EMAILADDRESS%</username>
-    </incomingServer>
-  </emailProvider>
-</clientConfig>
-XML;
+            <?xml version="1.0"?>
+            <clientConfig>
+              <emailProvider>
+                <displayName>Example</displayName>
+                <incomingServer type="imap">
+                  <hostname>imap.example.com</hostname>
+                  <port>143</port>
+                  <socketType>STARTTLS</socketType>
+                  <username>%EMAILADDRESS%</username>
+                </incomingServer>
+              </emailProvider>
+            </clientConfig>
+            XML;
 
         $this->mockHttpResponse(200, $xml);
 
@@ -121,19 +121,19 @@ XML;
     public function testSearchMailPlainSocket(): void
     {
         $xml = <<<'XML'
-<?xml version="1.0"?>
-<clientConfig>
-  <emailProvider>
-    <displayName>Example</displayName>
-    <incomingServer type="pop3">
-      <hostname>pop.example.com</hostname>
-      <port>110</port>
-      <socketType>PLAIN</socketType>
-      <username>%EMAILLOCALPART%</username>
-    </incomingServer>
-  </emailProvider>
-</clientConfig>
-XML;
+            <?xml version="1.0"?>
+            <clientConfig>
+              <emailProvider>
+                <displayName>Example</displayName>
+                <incomingServer type="pop3">
+                  <hostname>pop.example.com</hostname>
+                  <port>110</port>
+                  <socketType>PLAIN</socketType>
+                  <username>%EMAILLOCALPART%</username>
+                </incomingServer>
+              </emailProvider>
+            </clientConfig>
+            XML;
 
         $this->mockHttpResponse(200, $xml);
 
@@ -148,25 +148,25 @@ XML;
     public function testSearchMailNoImapSkipsImap(): void
     {
         $xml = <<<'XML'
-<?xml version="1.0"?>
-<clientConfig>
-  <emailProvider>
-    <displayName>Example</displayName>
-    <incomingServer type="imap">
-      <hostname>imap.example.com</hostname>
-      <port>993</port>
-      <socketType>SSL</socketType>
-      <username>%EMAILADDRESS%</username>
-    </incomingServer>
-    <incomingServer type="pop3">
-      <hostname>pop.example.com</hostname>
-      <port>995</port>
-      <socketType>SSL</socketType>
-      <username>%EMAILADDRESS%</username>
-    </incomingServer>
-  </emailProvider>
-</clientConfig>
-XML;
+            <?xml version="1.0"?>
+            <clientConfig>
+              <emailProvider>
+                <displayName>Example</displayName>
+                <incomingServer type="imap">
+                  <hostname>imap.example.com</hostname>
+                  <port>993</port>
+                  <socketType>SSL</socketType>
+                  <username>%EMAILADDRESS%</username>
+                </incomingServer>
+                <incomingServer type="pop3">
+                  <hostname>pop.example.com</hostname>
+                  <port>995</port>
+                  <socketType>SSL</socketType>
+                  <username>%EMAILADDRESS%</username>
+                </incomingServer>
+              </emailProvider>
+            </clientConfig>
+            XML;
 
         $this->mockHttpResponse(200, $xml);
 
@@ -208,19 +208,19 @@ XML;
     public function testEmptyUsernameFieldYieldsNull(): void
     {
         $xml = <<<'XML'
-<?xml version="1.0"?>
-<clientConfig>
-  <emailProvider>
-    <displayName>Example</displayName>
-    <outgoingServer type="smtp">
-      <hostname>smtp.example.com</hostname>
-      <port>587</port>
-      <socketType>STARTTLS</socketType>
-      <username></username>
-    </outgoingServer>
-  </emailProvider>
-</clientConfig>
-XML;
+            <?xml version="1.0"?>
+            <clientConfig>
+              <emailProvider>
+                <displayName>Example</displayName>
+                <outgoingServer type="smtp">
+                  <hostname>smtp.example.com</hostname>
+                  <port>587</port>
+                  <socketType>STARTTLS</socketType>
+                  <username></username>
+                </outgoingServer>
+              </emailProvider>
+            </clientConfig>
+            XML;
 
         $this->mockHttpResponse(200, $xml);
 
